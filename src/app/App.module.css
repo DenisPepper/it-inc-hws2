@@ -1,0 +1,73 @@
+.App {
+    min-width: 320px;
+    min-height: 480px;
+    background: rgb(255,255,255);
+    background: linear-gradient(320deg, rgba(255,255,255,1) 13%, rgba(48, 255, 231, 0.2) 100%);
+    overflow: hidden;
+}
+
+.balls {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.ball,
+.ball_option {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 0 4px;
+    border-radius: 50%;
+    background-color: yellow;
+    box-shadow: 0 0 5px goldenrod;
+    animation: animate 15s linear infinite;
+}
+
+.ball:nth-child(even) {
+    background-color: red;
+    box-shadow: 0 0 5px darkred;
+}
+
+.ball_option {
+    background-color: #0066cc;
+    box-shadow: 0 0 5px darkblue;
+}
+
+.ball_option:nth-child(even) {
+    background-color: deeppink;
+    box-shadow: 0 0 5px red;
+}
+
+.ball:before,
+.ball_option:before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border: 2px solid transparent;
+    border-bottom: 3px solid goldenrod;
+    position: absolute;
+    bottom: -12%;
+    left: 34%;
+}
+
+.ball:nth-child(even):before {
+    border-bottom: 3px solid crimson;
+}
+
+.ball_option:before {
+    border-bottom: 3px solid #0066cc;
+}
+
+.ball_option:nth-child(even):before {
+    border-bottom: 3px solid deeppink;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(110vh) scale(0);
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}
